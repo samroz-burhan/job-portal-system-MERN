@@ -2,8 +2,7 @@
 import mongoose from "mongoose";
 import bcrypt from "bcryptjs";
 
-const userSchema = new mongoose.Schema(
-  {
+const userSchema = new mongoose.Schema({
     // PERSONAL INFORMATION
     fullName: {
       type: String,
