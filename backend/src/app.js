@@ -14,4 +14,11 @@ const corsOptions = {
 }
 app.use(cors(corsOptions));
 
+// Routes Required
+import authRouter from "./routes/auth.route.js";
+
+// Routes Used
+app.use("/api/auth", authRouter);
+
+
 export default app;
