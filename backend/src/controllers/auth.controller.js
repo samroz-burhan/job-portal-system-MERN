@@ -6,8 +6,25 @@ import sanitize from "mongo-sanitize";
  * - API: POST /api/auth/accounts
  */
 
-export async function registerUser(req, res) {
-    const { fullname, email, password, role, termsAccepted } = sanitize(req.body);
+export const registerUser = async (req, res) => {
+  const {
+    fullName,
+    email,
+    password,
+    role,
+    termsAccepted,
+    isVerified,
+  } = req.body;
 
-    res.json({ fullname, email, password, role, termsAccepted })
-}
+  return res.status(201).json({
+    message: "API working properly",
+    user: {
+      fullName,
+      email,
+      password,
+      role,
+      termsAccepted,
+      isVerified,
+    },
+  });
+};
